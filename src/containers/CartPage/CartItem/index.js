@@ -21,7 +21,7 @@ const CartItem = (props) => {
     <div className="cartItemContainer">
       <div className="flexRow">
         <div className="cartProImgContainer">
-          <img src={img} alt={""} />
+          <img src={`https://flipkart-backend2.herokuapp.com/public/${img}`} alt={""} />
         </div>
         <div className="cartItemDetails">
           <div>

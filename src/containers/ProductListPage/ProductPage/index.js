@@ -35,7 +35,7 @@ export default function ProductPage(props) {
                     style={{ display: 'block'}}
                     href={banner.navigateTo}
                     >
-                        <img src={banner.img} alt="" />
+                        <img src={`https://flipkart-backend2.herokuapp.com/public/${banner.img}`} alt="" />
                     </a>
                 )
             }
@@ -44,7 +44,7 @@ export default function ProductPage(props) {
             {
                 page.products && page.products.map((product, index) =>
                     <Card key={index} style={{width:'400px' , height:'200px' ,margin:'5px' }}>
-                        <img src={product.img} alt="" style={{width:'100%', height:'100%'}}/>                        
+                        <img src={`https://flipkart-backend2.herokuapp.com/public/${product.img}`} alt="" style={{width:'100%', height:'100%'}}/>                        
                     </Card>
                 )
             }

@@ -46,8 +46,8 @@ export default function ProductDetailsPage(props) {
               <div className="productDescContainer">
                 <div className="productDescImgContainer">
                   <img
-                    src={product.productDetails.productPictures[0].img}
-                    alt={`${product.productDetails.productPictures[0].img}`}
+                    src={`https://flipkart-backend2.herokuapp.com/public/${product.productDetails.productPictures[0].img}`}
+                    alt=""
                   />
                 </div>
     
