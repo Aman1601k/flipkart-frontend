@@ -11,6 +11,7 @@ export default function ProductPage(props) {
     
     const dispatch = useDispatch();
     const product = useSelector((state) => state.product);
+    window.product = product;
     const {page} = product;
     console.log(page)
     useEffect(() => {
@@ -28,6 +29,7 @@ export default function ProductPage(props) {
         <Carousel
         renderThumbs={() =>{}}
         >
+            {/* {window.banners = page.banners}  */}
             {
                 page.banners && page.banners.map((banner , index) => 
                     <a 
@@ -35,7 +37,7 @@ export default function ProductPage(props) {
                     style={{ display: 'block'}}
                     href={banner.navigateTo}
                     >
-                        <img src={`https://flipkartbackend.herokuapp.com${banner.img}`} alt={banner.id} />
+                        <img src={`https://flipkart-backend2.herokuapp.com/public/${banner.img.split('public/')[1]}`} alt="" />
                     </a>
                 )
             }
@@ -44,7 +46,7 @@ export default function ProductPage(props) {
             {
                 page.products && page.products.map((product, index) =>
                     <Card key={index} style={{width:'400px' , height:'200px' ,margin:'5px' }}>
-                        <img src={`https://flipkartbackend.herokuapp.com${product.img}`} alt="" style={{width:'100%', height:'100%'}}/>                        
+                        <img src={`https://flipkart-backend2.herokuapp.com/public/${product.img.split('public/')[1]}`} alt="" style={{width:'100%', height:'100%'}}/>                        
                     </Card>
                 )
             }
@@ -53,3 +55,5 @@ export default function ProductPage(props) {
 
   );
 }
+
+//window.store.getState().product.page.banners[0].img.split('public/')[1]
